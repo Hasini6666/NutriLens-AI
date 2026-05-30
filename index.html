@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriLens AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>NutriLens AI</h1>
+
+        <p class="subtitle">
+            Smart Food Packet Ingredient Analyzer
+        </p>
+
+        <div class="upload-card">
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/*"
+                onchange="previewImage(event)"
+            >
+
+            <img
+                id="preview"
+                src=""
+                alt="Food Packet Preview"
+            >
+
+            <button onclick="scanImage()">
+                Scan Packet
+            </button>
+
+        </div>
+
+        <textarea
+            id="ingredientInput"
+            placeholder="Detected ingredients will appear here..."
+        ></textarea>
+
+        <button
+            class="analyze-btn"
+            onclick="analyzeIngredients()"
+        >
+            Analyze Ingredients
+        </button>
+
+        <div class="result-card">
+
+            <h2>Food Analysis Result</h2>
+
+            <p class="score-title">
+                Health Score
+            </p>
+
+            <div class="meter-container">
+                <div id="meterBar"></div>
+            </div>
+
+            <h2>
+                <span id="score">--</span>/10
+            </h2>
+
+            <p>
+                Status:
+                <span id="status">--</span>
+            </p>
+
+            <h3>Detected Risks</h3>
+
+            <ul id="issues"></ul>
+
+            <h3>Recommendation</h3>
+
+            <p id="recommendation">--</p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
