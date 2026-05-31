@@ -49,6 +49,3 @@ INS 211, E102, Artificial Flavor
 * Food comparison feature
 * History of scanned products
 
-## Project Demo
-
-Live Website: Add your GitHub Pages link here
